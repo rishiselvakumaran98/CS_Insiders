@@ -36,7 +36,7 @@ mongoose.Promise = global.Promise;
 const DBUri = process.env.MONGODB_URI || "mongodb://localhost:27017/cs_blog_post";
 
 //APP CONFIG // Create a new DB to use APP
-mongoose.connect('mongodb+srv://Rishi98:Rishikutty12@cluster0.oeetu.mongodb.net/<dbname>?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(DBUri, {useNewUrlParser: true, useUnifiedTopology: true})
       .then(() => console.log(`Database connected!`))
       .catch(err => console.log(`Database connection error: ${err.message}`));
 
@@ -140,6 +140,6 @@ app.use("/blogs/:id/comments", commentRoutes);
 
 
 //Setup app server for viewing
-app.listen("3000", process.env.IP, function(){
+app.listen(process.env.PORT, process.env.IP, function(){
 	console.log("Yep server is connected");
 });

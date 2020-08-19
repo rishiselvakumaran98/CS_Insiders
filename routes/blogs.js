@@ -165,7 +165,7 @@ router.get("/:id/edit", isLoggedIn, checkUserBlog, (req, res)=>{
 // UPDATE BLOG ROUTE
 router.put("/:id", (req, res)=>{
     // find and update the correct BLOG
-    var newInfo = {title: req.body.title, image: req.body.image, body: req.body.description, topic: req.body.topic}
+    var newInfo = {title: req.body.title, image: req.body.image, description: req.body.description, topic: req.body.topic}
     Blog.findByIdAndUpdate(req.params.id, {$set: newInfo}, (err, updatedBlog)=>{
        if(err){
            req.flash("error", err.message);

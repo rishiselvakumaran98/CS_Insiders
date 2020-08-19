@@ -1,0 +1,119 @@
+<%- include("../partials/header")%>
+
+<div class="ui main text container segment">
+
+	<div class="ui huge header"><%=blog.title%></div>
+	<super>By <%= blog.author.name%></super>
+	<!-- Add this in: <%=blog.author.image%> -->
+	<!--  -->
+	<div class="pull-right">
+	    <button type="button" class="btn btn-xs btn-primary" data-toggle="modal"
+	            data-target="#blogLikes">
+	        <span>Total likes: <i class="fas fa-thumbs-up"></i> <%= blog.likes.length %></span>
+	    </button>
+	</div>
+	<!--  -->
+	<div class="ui top attached">
+		<div class="item">
+			<img class="ui centered rounded image" src="<%=blog.image%>">
+			<div class="content">
+				<span>Created on <%= blog.created.toDateString()%></span>
+				<!-- Use moment js for a better date display to user -->
+			</div>
+			<div class="description" style="word-wrap: break-word; margin-top: 50px;">
+				<p><%-blog.description%></p>
+			</div>
+			
+			<% if(currentUser && blog.author.id.equals(currentUser._id)){ %>
+				<a href="/blogs/<%=blog._id%>/edit" class="ui orange basic button">Update Blog</a>
+	            <form style="display: inline" method="POST" action="/blogs/<%=blog._id%>?_method=DELETE">
+	                <button class="ui red basic button" type="submit">Delete Blog</button>
+	            </form>
+	        <% } %>
+	        <div style="padding-bottom: 10px;">
+	            <form action="/blogs/<%= blog._id %>/like" method="POST">
+	                <div class="btn-group">
+	                    <% if (currentUser && blog.likes.some((like)=> {
+	                        return like.equals(currentUser._id)
+	                    })) { %>
+	                        <button class="btn btn-sm btn-primary">
+	                            <i class="fas fa-thumbs-up"></i> Liked (<%= blog.likes.length %>)
+	                        </button>
+	                    <% } else { %>
+	                        <button class="btn btn-sm btn-secondary">
+	                            <i class="fas fa-thumbs-up"></i> Like (<%= blog.likes.length %>)
+	                        </button>
+	                    <% } %>
+	                    <button type="button" class="btn btn-sm btn-default" data-toggle="modal"
+	                            data-target="#blogLikes">See more details
+	                    </button>
+	                </div>
+	            </form>
+	        </div>
+			<hr>
+	        <div class="col-sm-12">
+	        	<h4>Comments (<span class="badge label-primary"> <%= blog.comments.length %></span>)
+	        	<a href="/blogs/<%=blog._id%>/comments/new" class="ui blue basic button float-right">Add Comments</a></h4>
+	        </div>
+	        <hr>
+	        <% blog.comments.forEach(function(comment){ %>
+	            <div class="row">
+	                <div class="col-md-12">
+	                    <strong><%= comment.author.name %></strong>
+	                    <span class="pull-right"><%=moment(comment.createdAt).fromNow() %></span>
+	                    <p>
+	                        <%= comment.text %> 
+	                    </p>
+	                <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+	                    <a class="btn btn-xs btn-warning" 
+	                       href="/blogs/<%=blog._id %>/comments/<%=comment._id %>/edit">Edit</a>
+	                    <form style="display: inline" id="delete-form" action="/blogs/<%=blog._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
+	                        <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+	                    </form>
+	                <% } %>
+	                </div>
+	            </div>
+	        <% }) %>
+	        
+		</div>
+	</div>
+</div>
+
+<!-- Blog Likes Modal -->
+<div id="blogLikes" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                
+                <h4 class="modal-title">Blog likes: <%= blog.likes.length %></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Liked by:</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% blog.likes.forEach(function(like) { %>
+                        <tr>
+                            <td><span class="badge"><i class="fas fa-user"></i></span> <%= like.name %></td>
+                        </tr>
+                    <% }); %>
+                    <% if (blog.likes.length === 0) { %>
+                        <tr>
+                            <td><em>No likes yet.</em></td>
+                        </tr>
+                    <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include("../partials/footer")%>

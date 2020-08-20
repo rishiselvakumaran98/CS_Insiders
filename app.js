@@ -15,9 +15,9 @@ var express 		  = require("express"),
   flash           = require("connect-flash"),
   session         = require("express-session");
 
-const jwt = require('jsonwebtoken');
-const cors = require('cors');
-app.use(cors());
+// const jwt = require('jsonwebtoken');
+// const cors = require('cors');
+// app.use(cors());
 
 
 // Need to configure dotenv
@@ -76,61 +76,61 @@ app.use(function(req, res, next){
 });
 
 
-const privateKey = `
------BEGIN PRIVATE KEY-----
-MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDVO/KAor9EOG0r
-TmjHiXOEiGWcdarpMOQl4blUralcRUhcx404f8Uw4Kf2UafomDfOoZPQ13XS0JxX
-If4oBbTlGKPbVN7N1FJA/ANE3wKTw/PH6SvqxxWF4hP0eryf0SZZWFy7C+0deRpF
-tPr8peRk1niX+UsaOvA2HV3oLFBaX5Dq2PhzDhJtoTSD9DYasL0+vb2jnWcAe3TD
-XJ2dWM1ZVi6TW56psC2uV4PIqt0cPoPlXOTD/povS8oBIyBT0U/ZO1NSlkMCCJdU
-F+H7AJbmqx7qdeg8gEjWu5QJ2vMfGmf5CALkA/MwF9QAFja/qMQyIwKPJHmkxTpb
-HcGPrN1bAgMBAAECggEABqCvX+ovEbrDQeZVAWa3TXZD2kIaBtd7L+Y9MXGYYwLQ
-Rfn53Liz81n4PoK5OlSI34ZMJuCbi+rqARdQZAQRZFGIvkd8CV/BEr4CiAB6fwdH
-K36G2+xGMfwd7Kpn9Hu2um4xq6qqOxFJjMMcTgAGAlBcPTUFbZJJZxUwlwfRk414
-UgMLG9sZE2kNgsu49ZjPDkN3FtazZHLSMuulpBvszKy1Kg+xPgLn9Bfbi8MaYY8f
-otnen2QA29cm/Wvo1gF+mOeOkq7C/PZh05YWA0pH/IriwxgA88ROWfB9vgOQK+10
-llGZJ5E3+WutR3hnjRubRa5FQ9EH2FyaFQnBgNpiIQKBgQD30soBGvaxcNHd8nq8
-YbL5nMTghmESB8JOp3fJ+1Pe3zPmwO0hCBZKo9dS06G6+6Tuxmm1Q4hu4s54HlKi
-MmAzkktziLg+YAuAm1BO3swhDbYJ2J+dudL/VS/CNYMJieD7msx6YgvCZ3egEGlg
-CPtxtFwq40PIDXQmCkRXTiTsKwKBgQDcRQEgc9bqiazpwLLwki/TlZcrf0ngM2L6
-6MNzxgRQjc0X19qIef6uwqNs87KGdV387oBifj8XlmKSiVixKlK/Ojl1sFAsISAN
-jS5tXEMhKijSdujCbunY/v1YHNHLO8pjOOI+lwk23Ia6hALsZBa3Px9TEsS18L27
-gkKJePfLkQKBgQCaO6qSg4hyqCdEvUsbgKZVaPayUY+KHCAWuWz43Jy3ASyY+Qrb
-WuActdklaCaoa0KbhAp30D7R2//pi92bqkRq9CpXDgi0cSvXb1HMtCZQj+ryN8om
-7GZfmFGvyYPy5MeLbyzBIdH1vFUb3frm1NBAVKJj4qrlj1Hw9sTPnQennwKBgF+p
-/H5KsSl1l8qBrXV8GBdtnZT/mGcuCivs0Y5DjvYpT8yuK7QgP7NIx093W6635JUI
-RGwCZoZpAvCfhAyV1BBHSlNJutgfntsj2OkYK/OIauhVSmu/XgKnZAJTqe35TsHf
-H6uNTywrhLwWv2pJYfA+Eu2ydgqKvuxj+1/XUM9xAoGBAMd0z3r6VBseIB9koGGe
-IrlS810Dg6hyHDEFrdJgr3kjnwrCF5VsDZ0geT1AJf0Xw1Doi9pPAvF7a/iLlhsW
-N/5zK0yscTGYME8yaEo6yF96TFBnunE4ZP4DVebZGRSTHH3jySoECKDJjG7KgRuE
-QTxfhyBy1TrMiXh61WsvaoOs
------END PRIVATE KEY-----
-`;
+// const privateKey = `
+// -----BEGIN PRIVATE KEY-----
+// MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDVO/KAor9EOG0r
+// TmjHiXOEiGWcdarpMOQl4blUralcRUhcx404f8Uw4Kf2UafomDfOoZPQ13XS0JxX
+// If4oBbTlGKPbVN7N1FJA/ANE3wKTw/PH6SvqxxWF4hP0eryf0SZZWFy7C+0deRpF
+// tPr8peRk1niX+UsaOvA2HV3oLFBaX5Dq2PhzDhJtoTSD9DYasL0+vb2jnWcAe3TD
+// XJ2dWM1ZVi6TW56psC2uV4PIqt0cPoPlXOTD/povS8oBIyBT0U/ZO1NSlkMCCJdU
+// F+H7AJbmqx7qdeg8gEjWu5QJ2vMfGmf5CALkA/MwF9QAFja/qMQyIwKPJHmkxTpb
+// HcGPrN1bAgMBAAECggEABqCvX+ovEbrDQeZVAWa3TXZD2kIaBtd7L+Y9MXGYYwLQ
+// Rfn53Liz81n4PoK5OlSI34ZMJuCbi+rqARdQZAQRZFGIvkd8CV/BEr4CiAB6fwdH
+// K36G2+xGMfwd7Kpn9Hu2um4xq6qqOxFJjMMcTgAGAlBcPTUFbZJJZxUwlwfRk414
+// UgMLG9sZE2kNgsu49ZjPDkN3FtazZHLSMuulpBvszKy1Kg+xPgLn9Bfbi8MaYY8f
+// otnen2QA29cm/Wvo1gF+mOeOkq7C/PZh05YWA0pH/IriwxgA88ROWfB9vgOQK+10
+// llGZJ5E3+WutR3hnjRubRa5FQ9EH2FyaFQnBgNpiIQKBgQD30soBGvaxcNHd8nq8
+// YbL5nMTghmESB8JOp3fJ+1Pe3zPmwO0hCBZKo9dS06G6+6Tuxmm1Q4hu4s54HlKi
+// MmAzkktziLg+YAuAm1BO3swhDbYJ2J+dudL/VS/CNYMJieD7msx6YgvCZ3egEGlg
+// CPtxtFwq40PIDXQmCkRXTiTsKwKBgQDcRQEgc9bqiazpwLLwki/TlZcrf0ngM2L6
+// 6MNzxgRQjc0X19qIef6uwqNs87KGdV387oBifj8XlmKSiVixKlK/Ojl1sFAsISAN
+// jS5tXEMhKijSdujCbunY/v1YHNHLO8pjOOI+lwk23Ia6hALsZBa3Px9TEsS18L27
+// gkKJePfLkQKBgQCaO6qSg4hyqCdEvUsbgKZVaPayUY+KHCAWuWz43Jy3ASyY+Qrb
+// WuActdklaCaoa0KbhAp30D7R2//pi92bqkRq9CpXDgi0cSvXb1HMtCZQj+ryN8om
+// 7GZfmFGvyYPy5MeLbyzBIdH1vFUb3frm1NBAVKJj4qrlj1Hw9sTPnQennwKBgF+p
+// /H5KsSl1l8qBrXV8GBdtnZT/mGcuCivs0Y5DjvYpT8yuK7QgP7NIx093W6635JUI
+// RGwCZoZpAvCfhAyV1BBHSlNJutgfntsj2OkYK/OIauhVSmu/XgKnZAJTqe35TsHf
+// H6uNTywrhLwWv2pJYfA+Eu2ydgqKvuxj+1/XUM9xAoGBAMd0z3r6VBseIB9koGGe
+// IrlS810Dg6hyHDEFrdJgr3kjnwrCF5VsDZ0geT1AJf0Xw1Doi9pPAvF7a/iLlhsW
+// N/5zK0yscTGYME8yaEo6yF96TFBnunE4ZP4DVebZGRSTHH3jySoECKDJjG7KgRuE
+// QTxfhyBy1TrMiXh61WsvaoOs
+// -----END PRIVATE KEY-----
+// `;
 
-app.post('/jwt', function (req, res) {
-  // NOTE: Before you proceed with the TOKEN, verify your users' session or access.
-  const payload = {
-    sub: '123', // Unique user id string
-    name: 'Rishi Selvakumaran', // Full name of user
+// app.post('/jwt', function (req, res) {
+//   // NOTE: Before you proceed with the TOKEN, verify your users' session or access.
+//   const payload = {
+//     sub: '123', // Unique user id string
+//     name: 'Rishi Selvakumaran', // Full name of user
 
-    // Optional custom user root path
-    // 'https://claims.tiny.cloud/drive/root': '/johndoe',
+//     // Optional custom user root path
+//     // 'https://claims.tiny.cloud/drive/root': '/johndoe',
 
-    exp: Math.floor(Date.now() / 1000) + (60 * 10) // 10 minutes expiration
-  };
+//     exp: Math.floor(Date.now() / 1000) + (60 * 10) // 10 minutes expiration
+//   };
 
-  try {
-    const token = jwt.sign(payload, privateKey, { algorithm: 'RS256'});
-    res.set('content-type', 'application/json');
-    res.status(200);
-    res.send(JSON.stringify({
-      token: token
-    }));
-  } catch (e) {
-    res.status(500);
-    res.send(e.message);
-  }
-});
+//   try {
+//     const token = jwt.sign(payload, privateKey, { algorithm: 'RS256'});
+//     res.set('content-type', 'application/json');
+//     res.status(200);
+//     res.send(JSON.stringify({
+//       token: token
+//     }));
+//   } catch (e) {
+//     res.status(500);
+//     res.send(e.message);
+//   }
+// });
 
 // Set the routes for the Apps
 app.use("/", indexRoutes);

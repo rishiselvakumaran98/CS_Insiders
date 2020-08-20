@@ -33,5 +33,8 @@
     "start": "node app.js"
   },
   "author": "Rishi Selvakumaran",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "12.18.0"
+  }
 }

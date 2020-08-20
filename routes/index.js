@@ -51,7 +51,7 @@ router.post("/login", passport.authenticate("local",
         //successRedirect: "/blogs",
         failureRedirect: "/login",
         failureFlash: true,
-        successFlash: 'Welcome to Codebase!'
+        successFlash: 'Welcome to CS Insiders!'
     }), function(req, res){
           res.redirect(req.session.returnTo || '/blogs');
           delete req.session.returnTo;

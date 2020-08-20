@@ -1,4 +1,4 @@
-[Link to App]("https://cs-insiders.herokuapp.com/")
+[Link to App](https://cs-insiders.herokuapp.com/)
 # CS_Insiders
 
 * Created and Designed by Rishi Selvakumaran 

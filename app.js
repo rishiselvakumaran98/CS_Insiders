@@ -21,7 +21,7 @@ var express 		  = require("express"),
 
 
 // Need to configure dotenv
-require('dotenv').config({ silent: process.env.NODE_ENV === 'production' });
+//require('dotenv').config({ silent: process.env.NODE_ENV === 'production' });
 
 
 // Routing for the Schema models:

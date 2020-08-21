@@ -11,13 +11,13 @@ The website is simple and while it doesn't have any fancy animations or visually
 
 # How to use the Website:
 
-- Upon arriving at the website, the user is directed to the landing webpage where they are greeted by nice fade in and out animations of codes, organizationa dna technology themed background. Once the user clicks on "Get started" button at the middle of the of the screen, they are directed to the index page of the website which showcases all the blogs posted by users
+- Upon arriving at the website, the user is directed to the landing webpage where they are greeted by nice fade in and out animations of codes, organization and technology themed background. Once the user clicks on "Get started" button at the middle of the of the screen, they are directed to the index page of the website which showcases all the blogs posted by users
 
 # Nav/ Menu Bar features:
 
 1. On the Nav bar, there is the home button which can be used to direct to the home page or the index page where all the blogs are showcased. 
 
-2. User wishes to see blogs specific to one of the main topics, "Web Development, AI and/ or ML, Data-Science, Internship advice" listed, they could click on the topic and be redirected to blogs grouped under that topic.
+2. If User wishes to see blogs specific to one of the main topics, "Web Development, AI and/ or ML, Data-Science, Internship advice" listed, they could click on the topic and be redirected to blogs grouped under that specific topic.
 
 3. If user wishes to navigate specific title of blog, they could search for it using the search toolbar located at the right hand side of the menu bar. The search bar actively searches through the blogs and displays the closest matched blog to the user.
 

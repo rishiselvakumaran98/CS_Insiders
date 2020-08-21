@@ -13,7 +13,14 @@ var express 		  = require("express"),
   middleware      = require("./middleware/index"),
   cookieParser    = require("cookie-parser"),
   flash           = require("connect-flash"),
-  session         = require("express-session");
+  session         = require("express-session"),
+  async           = require('async'),
+  nodemailer      = require('nodemailer'),
+  crypto          = require('crypto'),
+  bcrypt          = require('bcrypt-nodejs'),
+  logger          = require('morgan'),
+  path            = require('path'),
+  favicon         = require('static-favicon');
 
 // Need to configure dotenv
 //require('dotenv').config({ silent: process.env.NODE_ENV === 'production' });
@@ -37,9 +44,12 @@ mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
 
 
 // App set and use Configuration
-
+app.set('port', process.env.PORT || 3000);
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+app.use(favicon());
+app.use(logger('dev'));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 app.use(expressSantizer());
@@ -49,7 +59,7 @@ app.locals.moment = require('moment');
 
 
 // PASSPORT CONFIGURATION
-app.use(require("express-session")({
+app.use(session({
     secret: "This Blog is the best!",
     resave: false,
     saveUninitialized: false
@@ -58,9 +68,33 @@ app.use(require("express-session")({
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+//passport.use(new LocalStrategy(User.authenticate()));
+passport.use(new LocalStrategy(function(username, password, done) {
+  User.findOne({ username: username }, function(err, user) {
+    if (err) return done(err);
+    if (!user) return done(null, false, { message: 'Incorrect username.' });
+    user.comparePassword(password, function(err, isMatch) {
+      if (isMatch) {
+        return done(null, user);
+      } else {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+    });
+  });
+}));
+
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function(err, user) {
+    done(err, user);
+  });
+});
+
+//passport.serializeUser(User.serializeUser());
+//passport.deserializeUser(User.deserializeUser());
 
 // Let other JS pages have access to the current user
 app.use(function(req, res, next){
@@ -78,6 +112,6 @@ app.use("/blogs/:id/comments", commentRoutes);
 
 
 //Setup app server for viewing
-app.listen(process.env.PORT, process.env.IP, function(){
-	console.log("Yep server is connected");
+app.listen(app.get('port'), process.env.IP, function(){
+	console.log("Yep server is connected" + app.get('port'));
 });

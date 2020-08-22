@@ -27,7 +27,7 @@ The website is simple and while it doesn't have any fancy animations or visually
 
 - Upon login, users have new features and privileges such as ability to add new blogs, add likes and comments to existing blogs, and edit/view blogs that were created by them. 
 
-- If user forgets their name or username used for the website they could view it under their "My Profile" button located at the dropdown menu, right before the logout button. The forget password feature will be updated for the website in the near future.
+- If user forgets their password, they could request for a link to create their new password by clicking on the "forget password" button. If user forgets their name or username used for the website they could view it under their "My Profile" button located at the dropdown menu, right before the logout button.
 
 # Main Blog features:
 
@@ -46,7 +46,7 @@ The website is simple and while it doesn't have any fancy animations or visually
 
 # Potential features in the near future:
 
-- Email authentication for users based on google or facebook login/signup and ability to recover forgotten password through email.
+- Email authentication for users based on google or facebook login/signup.
 
 - Adding Pagination for the index page. (provided website starts having more blogs from users)
 
@@ -59,9 +59,13 @@ The website is simple and while it doesn't have any fancy animations or visually
 
 - ExpressJS --> Javscript Web framework used for setting up the app and overall MVC layout for the website
 
+- MongoDB Atlas --> A NoSQL database used in the application for storing objects and models of blogs, creating user models and also comments for each of the blogs.
+
 - Mongoose --> A Database server tool used for modeling blog, comment, user schemas and performing CRUD operations on MongoDb such on creating, reading(getting), updating and deleting blogs, comments, and likes on blogs.
 
 - PassportJS --> User login authentication module used for authentication user, and securing user's profile with encrypted hash key.
+
+- Nodemailer --> Used for sending email to user for resting their password in website
 
 - Tiny Docs --> Text Box editor module used in blog creation and editing. 
 

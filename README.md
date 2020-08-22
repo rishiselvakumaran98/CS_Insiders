@@ -1,8 +1,7 @@
 [Link to App](https://cs-insiders.herokuapp.com/)
 # CS_Insiders
 
-* Created and Designed by Rishi Selvakumaran 
-* Website theme and structure adapted from Udemy course: The Web Developer Bootcamp by Colt Steele
+* Created and Designed by Rishi Selvakumaran
 
 # Summary:
 
@@ -70,3 +69,6 @@ The website is simple and while it doesn't have any fancy animations or visually
 - Tiny Docs --> Text Box editor module used in blog creation and editing. 
 
 - Html-to-Text --> A NPM module used for converting the html tag based elements added from the Tiny Docs text editor to a user readable text on blog description
+
+# Website Theme:
+* Website theme and structure adapted from Udemy course: The Web Developer Bootcamp by Colt Steele

@@ -22,7 +22,7 @@ The website is simple and while it doesn't have any fancy animations or visually
 
 # Login/ Signup features:
 
-- Users who wish to add a new blog under the CS_insiders must create a profile under the website, before adding new blogs related to CS.
+- Users who wish to add a new blog under the CS_insiders must create a profile under the website.
 
 - Upon login, users have new features and privileges such as ability to add new blogs, add likes and comments to existing blogs, and edit/view blogs that were created by them. 
 
@@ -40,7 +40,7 @@ The website is simple and while it doesn't have any fancy animations or visually
 
 - Since the blog was constructed in two weeks upon learning the fundamentals of web development, the blog creator (Rishi) wasn't able to incorporate many of the features found in professional social media websites. In the near future, more important features will be published on the website as indicated below.
 
-- The Styling and animation rendering for the website is very bare minimal, and developer hopes to achieve a better visualization for the website with more guidance, research and time given.
+- The Styling and animation rendering for the website is very bare minimal, and the developer (Rishi) hopes to achieve a better visualization for the website with more guidance, research and time given.
 
 
 # Potential features in the near future:
@@ -54,15 +54,15 @@ The website is simple and while it doesn't have any fancy animations or visually
 
 # Important Tools/ NPM Modules used for website:
 
-- NodeJS --> Runtime server used for compiling the website
+- NodeJS --> Runtime Javascript server used for compiling the website
 
-- ExpressJS --> Javscript Web framework used for setting up the app and overall MVC layout for the website
+- ExpressJS --> Javascript Web framework used for setting up the app and overall MVC structure layout for the website
 
 - MongoDB Atlas --> A NoSQL database used in the application for storing objects and models of blogs, creating user models and also comments for each of the blogs.
 
-- Mongoose --> A Database server tool used for modeling blog, comment, user schemas and performing CRUD operations on MongoDb such on creating, reading(getting), updating and deleting blogs, comments, and likes on blogs.
+- Mongoose --> A Database server model tool used for creating schema of the blog, comment, user models and using the schemas to perform CRUD operations on MongoDb such on creating, reading(getting), updating and deleting blogs, comments, and likes on the blog objects.
 
-- PassportJS --> User login authentication module used for authentication user, and securing user's profile with encrypted hash key.
+- PassportJS --> User login authentication module used for authenticating user, and securing user's profile with encrypted hash key.
 
 - Nodemailer --> Used for sending email to user for resting their password in website
 

@@ -6,7 +6,7 @@
 # Summary:
 
 CS-Insiders is a blog website designed and created by Rishi as part of a summer project in learning and applying a full stack web development from scratch.
-The website is simple and while it doesn't have any fancy animations or visually appealing elements added to it, it still serves its purpose in displaying a successful MVC implmentaion, Restful routing, integration with a NoSql Database (MongoDB Atlas), user authentication using passportjs and lastly the ability to be scalable for adding more features in the future. 
+The website is simple and while it doesn't have any fancy animations or visually appealing elements added to it, it still serves its purpose in displaying a successful MVC implementaion, Restful routing, integration with a NoSql Database (MongoDB Atlas), user authentication using passportjs and lastly the ability to be scalable for adding more features in the future. 
 
 # How to use the Website:
 

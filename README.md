@@ -12,7 +12,7 @@ The website is simple and while it doesn't have any fancy animations or visually
 
 - Upon arriving at the website, the user is directed to the landing webpage where they are greeted by nice fade in and out animations of codes, organization and technology themed background. 
 
-<a href="url"><img src="https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/StartScreen.png" align="center" height="360" width="980" ></a>
+<a href="url"><img src="https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/StartScreen.png" align="center" height="360" width="720" ></a>
 
 
 

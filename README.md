@@ -14,9 +14,10 @@ The website is simple and while it doesn't have any fancy animations or visually
 
 <a href="url"><img src="https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/StartScreen.png" align="center" height="360" width="720" ></a>
 
-
-
 - Once the user clicks on "Get started" button at the middle of the of the screen, they are directed to the index page of the website which showcases all the blogs posted by users
+
+<a href="url"><img src="https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/HomePage.png" align="center" height="420" width="760" ></a>
+
 
 # Nav/ Menu Bar features:
 

@@ -12,11 +12,11 @@ The website is simple and while it doesn't have any fancy animations or visually
 
 - Upon arriving at the website, the user is directed to the landing webpage where they are greeted by nice fade in and out animations of codes, organization and technology themed background. 
 
-<a href="url"><img src="https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/StartScreen.png" align="center" height="360" width="720" ></a>
+![alt text](https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/StartScreen.png)
 
 - Once the user clicks on "Get started" button at the middle of the of the screen, they are directed to the index page of the website which showcases all the blogs posted by users
 
-<a href="url"><img src="https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/HomePage.png" align="center" height="420" width="760" ></a>
+![alt text](https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/HomePage.png)
 
 
 # Nav/ Menu Bar features:
@@ -31,18 +31,18 @@ The website is simple and while it doesn't have any fancy animations or visually
 
 - Users who wish to add a new blog under the CS_insiders must create a profile under the website.
 
-<a href="url"><img src="https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/LoginPage.png" align="center" height="420" width="760" ></a>
+![alt text](https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/LoginPage.png)
 
-<a href="url"><img src="https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/SignupPage.png" align="center" height="420" width="760" ></a>
+![alt text](https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/SignupPage.png)
 
 - Upon login, users have new features and privileges such as ability to add new blogs, add likes and comments to existing blogs, and edit/view blogs that were created by them. 
 
 - If user forgets their password, they could request for a link to create their new password by clicking on the "forget password" button. If user forgets their name or username used for the website they could view it under their "My Profile" button located at the dropdown menu, right before the logout button.
 
-<a href="url"><img src="https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/ForgotPW.png" align="center" height="420" width="760" ></a>
+![alt text](https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/ForgotPW.png)
 
 
-<a href="url"><img src="https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/UserEmailForgot.png" align="center" height="420" width="760" ></a>
+![alt text](https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/UserEmailForgot.png)
 
 # Main Blog features:
 
@@ -50,7 +50,7 @@ The website is simple and while it doesn't have any fancy animations or visually
 
 - In the detailed show page of the blog, users could view who has written the blog (author's name), when it was written, how many likes were gathered by the blog from users, the main image used on the blog, the blog description, and the comments for the blog. 
 
-<a href="url"><img src="https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/Comments.png" align="center" height="420" width="760" ></a>
+![alt text](https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/Comments.png)
 
 # Constraints in Project:
 

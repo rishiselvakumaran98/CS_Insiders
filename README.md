@@ -12,7 +12,7 @@ The website is simple and while it doesn't have any fancy animations or visually
 
 - Upon arriving at the website, the user is directed to the landing webpage where they are greeted by nice fade in and out animations of codes, organization and technology themed background. 
 
-![alt text](https://github.com/rishiselvakumaran98/CS_Insiders/blob/master/img/StartScreen.png)
+<img src="img/StartScreen.png" />
 
 - Once the user clicks on "Get started" button at the middle of the of the screen, they are directed to the index page of the website which showcases all the blogs posted by users
 
